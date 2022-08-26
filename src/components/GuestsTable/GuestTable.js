@@ -15,9 +15,10 @@ const GuestTable = ({tableHeader, guests}) => {
                 <tbody>
                 {
                     guests?.map((guest) => {
-                        return <tr key={guest.partner_id} data-testid="guest-cell">
-                            <td>{guest.name}</td>
-                            <td>{guest.partner_id}</td>
+                        const {name, partner_id} = guest;
+                        return <tr key={partner_id} data-testid="guest-cell">
+                            <td>{name}</td>
+                            <td>{partner_id}</td>
                         </tr>
                     })
                 }
